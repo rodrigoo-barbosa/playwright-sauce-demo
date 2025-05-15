@@ -16,11 +16,11 @@ for (const usuario of usuarios) {
     await page.goto('https://www.saucedemo.com/');
 
     await page.fill('[data-test="username"]', usuario.username);
-    await page.fill('[data-test="password"]', 'secret_sauce'); // senha é igual para todos
-    await page.click('[data-test="login-button"]');
+    await page.fill('[data-test="password"]', 'secret_sauce') // senha é igual para todos
+    await page.click('[data-test="login-button"]')
 
     if (usuario.deveLogar) {
       await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
     }
-  });
+  })
 }
