@@ -1,0 +1,108 @@
+Título do caso de teste:  Login com credenciais válidas
+-ID: LOGIN-001
+-Funcionalidade: Tela de Login
+-Descrição: Verificar login com credenciais válidas
+-Dados de Entrada:
+ 	* Usuários válidos: standard_user,locked_out_user,problem_user,performance_glitch_user,error_user,visual_user
+ 	* Senha para todos os usuários: secret_sauce
+-Pré-condições: 
+	* A aplicação deve estar acessível em https://www.saucedemo.com
+	* O usuário deve ter um navegador com acesso à internet.
+
+-Passos:
+1. Acessar o site https://www.saucedemo.com
+2. Informar o nome de usuário válido
+3. Informar a senha válida
+4. Clicar no botão "Login"
+
+-Resultado Esperado:
+1. A página https://www.saucedemo.com deve ser carregada normalmente
+2. Campo pode ser preenchido normalmente
+3. Campo pode ser preenchido normalmente
+4. O sistema deve realizar login com sucesso e redirecionar para a página de inventário (`/inventory.html`)
+
+-Pós-condição:
+1. O usuário deve estar autenticado e com acesso à listagem de produtos.
+
+
+=========================================================================
+
+
+Título do caso de teste: Login com username vazio
+-ID: LOGIN-002
+-Funcionalidade: Tela de Login - 
+-Descrição: Verificar mensagem de erro ao tentar logar com o campo de usuário vazio
+-Dados de Entrada: password válido
+
+Passos:
+1. Acessar o site: https://www.saucedemo.com/
+2. Preencher apenas o campo de senha com: secret_sauce
+3. Clicar no botão de login
+
+-Resultado Esperado:
+1~2 Ação
+3. O sistema deve exibir a seguinte mensagem de erro:
+   "Epic sadface: Username is required"
+
+-Pós-condição:
+1. Não aplicado
+
+=========================================================================
+Título do caso de teste: Realizar logout com sucesso
+-ID: LOGOUT-001
+-Funcionalidade: Função de logout
+-Descrição: Verificar a ação de logout da conta do usuário
+-Dados de Entrada: Não aplicado
+-Pré-condições: Usuário deve estar logado em sua conta
+
+-Passos:
+1. Selecionar menu de opções no canto superior esquerdo da página (3 barras pequenas)
+2. Seleionar opção "Logout"
+
+
+-Resultado Esperado:
+1. Menu de opções é visualizado com as seguintes opções: 
+	* All Items
+	* About 
+        * Logout
+        * Reset App State
+2. Usuário é deslogado normalmente e tela de login deve ser exibida
+
+-Pós-condição:
+1. Não aplicado
+
+
+=========================================================================
+
+Título do caso de teste: Realizar compras de itens com sucesso
+-ID: COMPRA-001
+-Funcionalidade: Compra de itens
+-Descrição: Verificar se usuário é capaz de realizar compras de produtos com sucesso
+-Dados de Entrada: Não aplicado
+-Pré-condições: Usuário deve estar logado em sua conta
+
+-Passos:
+1. Navegar até a tela de inventário de produtos
+2. Adicionar produto no carrinho: Sauce Labs Backpack, pressionando o botão "Add do Cart"
+3. Adicionar produto no carrinho: Sauce Labs Bolt T-Shirt, pressionando o botão "Add do Cart" 
+4. Selecionar botão "Carrinho" no canto superior direito da tela
+5. Pressione opção "checkout" no canto superior direito da tela
+6. Fornecer corretamente dados de: First Name, Last Name, Zip/Postal Code
+7. Pressione botão "Continue" no canto inferior direito da tela
+9. Pressione botão "Finish" no canto inferior direito da tela
+9. Pressione botão "Back Home" no canto inferior direito da tela
+
+
+-Resultado Esperado
+1. Ação
+2. Produto deve ser adicionados ao carrinho e ícone de quantidade de itens adicionados ao carrinho deve exibir '1'
+3. Produto deve ser adicionados ao carrinho e ícone de quantidade de itens adicionados ao carrinho deve exibir '2'
+4. Os produtos adicionados devem estar visíveis para verificação do usuário
+5. Ação
+6. Os Campos deves ser preenchidos normalmente
+7. Novamente os produtos adicionados devem estar visíveis para verificação do usuário
+8. Ação
+9. Mensagem a seguir deve ser exibida: 
+Thank you for your order!
+Your order has been dispatched, and will arrive just as fast as the pony can get there!
+9. Deve retornar para tela de produtos disponíveis para compra
