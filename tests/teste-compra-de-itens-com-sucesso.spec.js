@@ -39,7 +39,7 @@ test('Verificar se usuário é capaz de realizar compras de produtos com sucesso
   
 
   // Confirma pedido
-  await page.click('[data-test="finish"]');
+  await page.click('[data-test="finish"]')
   await expect(page).toHaveURL(/.*checkout-complete.html/)
   await expect(page.locator('text=Thank you for your order!')).toBeVisible()
   await expect(page.locator('text=Your order has been dispatched')).toBeVisible()

@@ -13,14 +13,15 @@ const usuarios = [
 // Para cada usuário, define um teste individual
 for (const usuario of usuarios) {
   test(`Verificar login com usuário: ${usuario.username}`, async ({ page }) => {
-    await page.goto('https://www.saucedemo.com/');
+    await page.goto('https://www.saucedemo.com/')
 
-    await page.fill('[data-test="username"]', usuario.username);
+    await page.fill('[data-test="username"]', usuario.username)
     await page.fill('[data-test="password"]', 'secret_sauce') // senha é igual para todos
     await page.click('[data-test="login-button"]')
 
     if (usuario.deveLogar) {
-      await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
+      await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html')
     }
   })
 }
+// O Uso da vírgula foi dispensado, para seguir um padrão
